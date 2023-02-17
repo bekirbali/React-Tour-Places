@@ -3,33 +3,49 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  background-color: #eaeaea;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  padding: 0 0 1.3rem 0;
+  box-shadow: 0 0 0.3rem 0.2rem rgba($color: #daff05, $alpha: 0.5);
   .image {
+    width: 100%;
     margin-bottom: 0.5rem;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: flex-end;
     img {
-      width: 250px;
-      height: 250px;
+      width: 100%;
+      height: 260px;
+      &:hover {
+        backdrop-filter: grayscale(30%);
+      }
     }
     .description {
+      width: 100%;
       position: absolute;
-      height: 100px;
-      top: 120%;
+      height: 250px;
+      top: 200%;
+      color: white;
       left: 50%;
       transform: translate(-50%, -50%);
-      overflow: auto;
-      padding: 0.5rem;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      padding: 1rem;
+      border-radius: 0.2rem;
+      transition: 0.5s ease-in-out;
+      text-align: justify;
+
       &::-webkit-scrollbar {
         display: none;
       }
     }
+    &:hover .description {
+      top: 90%;
+    }
   }
-}
-
-.hoverEffect {
-  position: absolute;
-  height: 100px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  h2 {
+    margin-top: 0.4rem;
+  }
 }
